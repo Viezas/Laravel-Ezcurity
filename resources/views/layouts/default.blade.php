@@ -16,14 +16,12 @@
   <header >
     @include('_partials.nav')
   </header>
-
   <div>
     @yield('content')
   </div>
-  @livewireScripts
-
   <footer>
   @include('_partials.footer')
   </footer>
+  @livewireScripts
   </body>
 </html>

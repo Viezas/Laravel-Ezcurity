@@ -1,4 +1,4 @@
-<nav class="border-b-2 border-black px-4 lg:border-0 lg:flex lg:py-2">
+<nav class="px-4 lg:border-0 lg:flex lg:py-2">
   <div class="flex justify-between items-center lg:w-full">
     <!-- Responsive menu -->
     <button class="lg:hidden" id="toggle-menu">
