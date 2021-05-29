@@ -21,5 +21,9 @@
     @yield('content')
   </div>
   @livewireScripts
+
+  <footer>
+  @include('_partials.footer')
+  </footer>
   </body>
 </html>
