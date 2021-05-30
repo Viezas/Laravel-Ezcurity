@@ -78,11 +78,11 @@
     </div>
 
     <div class="flex items-center justify-center border-2 border-green-500 hidden" id="btns">    <!-- Btn to select a slide (desktop) -->
-      <button class="h-4 w-4 mr-2 rounded-full border-2 border-blue-900 bg-blue-600" id="btn1"></button>
-      <button class="h-4 w-4 mr-2 rounded-full border-2 border-black" id="btn2"></button>
-      <button class="h-4 w-4 mr-2 rounded-full border-2 border-black" id="btn3"></button>
-      <button class="h-4 w-4 mr-2 rounded-full border-2 border-black" id="btn4"></button>
-      <button class="h-4 w-4 mr-2 rounded-full border-2 border-black" id="btn5"></button>
+      <button class="h-4 w-4 mr-2 rounded-full border-2 border-blue-900 bg-blue-600 focus:outline-none" id="btn1"></button>
+      <button class="h-4 w-4 mr-2 rounded-full border-2 border-black focus:outline-none" id="btn2"></button>
+      <button class="h-4 w-4 mr-2 rounded-full border-2 border-black focus:outline-none" id="btn3"></button>
+      <button class="h-4 w-4 mr-2 rounded-full border-2 border-black focus:outline-none" id="btn4"></button>
+      <button class="h-4 w-4 mr-2 rounded-full border-2 border-black focus:outline-none" id="btn5"></button>
     </div>
   </div>
 
@@ -208,4 +208,23 @@ btn1.addEventListener('click', event => {
   colorBtn(btn1, btn2, btn3, btn4, btn5)
 })
 
+btn2.addEventListener('click', event => {
+  desktopSlide(slide2, slide1, slide3, slide4, slide5)
+  colorBtn(btn2, btn1, btn3, btn4, btn5)
+})
+
+btn3.addEventListener('click', event => {
+  desktopSlide(slide3, slide1, slide2, slide4, slide5)
+  colorBtn(btn3, btn1, btn2, btn4, btn5)
+})
+
+btn4.addEventListener('click', event => {
+  desktopSlide(slide4, slide1, slide2, slide3, slide5)
+  colorBtn(btn4, btn1, btn2, btn3, btn5)
+})
+
+btn5.addEventListener('click', event => {
+  desktopSlide(slide5, slide1, slide2, slide3, slide4)
+  colorBtn(btn5, btn1, btn2, btn3, btn4)
+})
 </script>
