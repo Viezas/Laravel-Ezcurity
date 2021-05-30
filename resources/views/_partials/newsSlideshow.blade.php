@@ -77,7 +77,7 @@
       </div>
     </div>
 
-    <div class="flex items-center justify-center border-2 border-green-500 hidden" id="btns">    <!-- Btn to select a slide (desktop) -->
+    <div class="flex items-center justify-center hidden" id="btns">    <!-- Btn to select a slide (desktop) -->
       <button class="h-4 w-4 mr-2 rounded-full border-2 border-blue-900 bg-blue-600 focus:outline-none" id="btn1"></button>
       <button class="h-4 w-4 mr-2 rounded-full border-2 border-black focus:outline-none" id="btn2"></button>
       <button class="h-4 w-4 mr-2 rounded-full border-2 border-black focus:outline-none" id="btn3"></button>
