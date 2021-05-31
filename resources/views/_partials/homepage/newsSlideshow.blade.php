@@ -1,4 +1,4 @@
-<div class="flex items-center justify-center w-full">  <!-- Slideshow container -->
+<div class="flex items-center justify-center w-full lg:px-20">  <!-- Slideshow container -->
 
   <button id="left-chevron" class="hover:bg-blue-600 focus:outline-none lg:hidden">  <!-- Left chevron -->
     <svg xmlns="http://www.w3.org/2000/svg" class="h-10" fill="none" viewBox="0 0 24 24" stroke="black">
@@ -77,7 +77,7 @@
       </div>
     </div>
 
-    <div class="flex items-center justify-center hidden" id="btns">    <!-- Btn to select a slide (desktop) -->
+    <div class="flex items-center justify-center mb-2 hidden" id="btns">    <!-- Btn to select a slide (desktop) -->
       <button class="h-4 w-4 mr-2 rounded-full border-2 border-blue-900 bg-blue-600 focus:outline-none" id="btn1"></button>
       <button class="h-4 w-4 mr-2 rounded-full border-2 border-black focus:outline-none" id="btn2"></button>
       <button class="h-4 w-4 mr-2 rounded-full border-2 border-black focus:outline-none" id="btn3"></button>
