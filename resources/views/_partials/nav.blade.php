@@ -1,4 +1,4 @@
-<nav class="px-4 lg:border-0 lg:flex lg:py-2 lg:mb-5">
+<nav class="px-4 mb-5 lg:border-0 lg:flex lg:py-2">
   <div class="flex justify-between items-center lg:w-full">
     <!-- Responsive menu -->
     <button class="lg:hidden" id="toggle-menu">
@@ -23,13 +23,15 @@
           <li class="ml-5"><a href="/">
             <img src="img/search.png" alt="Search button" class="h-8">
           </li>
-          <li class="ml-5 px-10 py-1 text-base text-white border-2 border-blue-900 bg-blue-600 hover:bg-blue-800"><a href="/">Inscription/<br>Connexion</a></li>
+          <a href="{{ route('login') }}">
+            <li class="ml-5 px-10 py-1 text-base text-white border-2 border-blue-900 bg-blue-600 hover:bg-blue-800">Inscription/<br>Connexion</li>
+          </a>
         </ul>
       </div>
     </div>
 
     <!-- Account button -->
-    <a href="/" class="lg:hidden">
+    <a href="{{ route('login') }}" class="lg:hidden">
       <img src="img/account.png" alt="Link to account" class="h-10 md:h-14">
     </a>
   </div>

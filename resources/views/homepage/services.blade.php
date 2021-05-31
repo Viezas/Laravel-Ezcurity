@@ -1,7 +1,7 @@
 <div class="py-5">
 
   <!-- Section Title -->
-  <div class="mb-16 mt-24">
+  <div class="mb-16 mt-10 xl:mt-24">
     <p class="text-center text-3xl font-bold text-blue-600"><span class="border-b-2 border-gray-400">Nos Services</span></p>
   </div>
 
