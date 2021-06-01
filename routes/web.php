@@ -35,3 +35,8 @@ Route::view('/subscribe/confirmed/', 'stripe/subscribed')->name('subscribed');
 
 //contact route
 Route::view('/contact', 'contact/contact')->name('contact');
+
+//Profile route
+Route::view('/profile', 'profile/profile')->name('profile');
+Route::view('/profile/subscriptions', 'profile/subscriptions')->name('profile.subscriptions');
+Route::view('/profile/billing', 'profile/billing')->name('profile.billing');

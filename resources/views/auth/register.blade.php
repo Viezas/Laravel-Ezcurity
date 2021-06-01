@@ -7,7 +7,7 @@
     <p class="text-blue-600 text-3xl text-center">Inscription</p>
   </div>
 
-  <form action="" class="border-2 border-black flex justify-center items-center flex-wrap py-6 mb-10 md:px-20">
+  <form action="{{ route('profile') }}" class="border-2 border-black flex justify-center items-center flex-wrap py-6 mb-10 md:px-20">
 
     <!-- Name -->
     <div class="w-5/6 mb-5">
