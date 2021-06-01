@@ -1,15 +1,18 @@
-<div class="py-5">
+@extends('layouts.default')
+@section('content')
+
+<div class="py-5 bg-blue-600 mb-10">
 
   <!-- Section Title -->
-  <div class="mb-16 mt-10 xl:mt-24">
-    <p class="text-center text-3xl font-bold text-blue-600"><span class="border-b-2 border-gray-400">Nos Services</span></p>
+  <div class="my-10">
+    <p class="text-center text-3xl font-bold text-white"><span class="border-b-2 border-white">Nos Services</span></p>
   </div>
 
   <!-- Services container -->
   <div class="flex flex-wrap items-center justify-center px-4 md:px-10 lg:px-0">
 
     <!-- Videosurveillance -->
-    <div class="border-2 border-gray-400 py-6 px-7 flex items-center justify-center flex-wrap mb-10 md:px-20 lg:w-2/5 lg:mr-10 lg:h-96 lg:px-8 xl:w-1/4">
+    <div class="border-2 border-gray-400 bg-white py-6 px-7 flex items-center justify-center flex-wrap mb-10 md:px-20 lg:w-2/5 lg:mr-10 lg:h-96 lg:px-8 xl:w-1/4">
       <img src="img/icons/cctv-camera.png" alt="Camera icon" class="h-20">
       <div class="w-auto text-center mb-4">
         <p class="text-2xl text-blue-600 my-4">Vidéosurveillance</p>
@@ -19,7 +22,7 @@
     </div>
 
     <!-- Alarmes -->
-    <div class="border-2 border-gray-400 py-6 px-7 flex items-center justify-center flex-wrap mb-10 md:px-20 lg:w-2/5 lg:h-96 lg:px-8 xl:w-1/4 xl:mr-10">
+    <div class="border-2 border-gray-400 bg-white py-6 px-7 flex items-center justify-center flex-wrap mb-10 md:px-20 lg:w-2/5 lg:h-96 lg:px-8 xl:w-1/4 xl:mr-10">
       <img src="img/icons/alert.png" alt="Alarme icon" class="h-20">
       <div class="w-auto text-center mb-4">
         <p class="text-2xl text-blue-600 my-4">Alarme de sécurité</p>
@@ -29,7 +32,7 @@
     </div>
 
     <!-- Badge -->
-    <div class="border-2 border-gray-400 py-6 px-7 flex items-center justify-center flex-wrap mb-10 md:px-20 lg:w-2/5 lg:mr-10 lg:h-96 lg:px-8 xl:w-1/4 xl:mr-0">
+    <div class="border-2 border-gray-400 bg-white py-6 px-7 flex items-center justify-center flex-wrap mb-10 md:px-20 lg:w-2/5 lg:mr-10 lg:h-96 lg:px-8 xl:w-1/4 xl:mr-0">
       <img src="img/icons/keycard.png" alt="Keycard icon" class="h-20">
       <div class="w-auto text-center mb-4">
         <p class="text-2xl text-blue-600 my-4">Badge de sécurité</p>
@@ -39,7 +42,7 @@
     </div>
 
     <!-- Biométrique -->
-    <div class="border-2 border-gray-400 py-6 px-7 flex items-center justify-center flex-wrap mb-10 md:px-20 lg:w-2/5 lg:h-96 lg:px-8 xl:w-1/4 xl:mr-10">
+    <div class="border-2 border-gray-400 bg-white py-6 px-7 flex items-center justify-center flex-wrap mb-10 md:px-20 lg:w-2/5 lg:h-96 lg:px-8 xl:w-1/4 xl:mr-10">
       <img src="img/icons/eye-recognition.png" alt="Biometric system icon" class="h-20">
       <div class="w-auto text-center mb-4">
         <p class="text-2xl text-blue-600 my-4">Système biométrique</p>
@@ -49,7 +52,7 @@
     </div>
 
     <!-- Detecteur -->
-    <div class="border-2 border-gray-400 py-6 px-7 flex items-center justify-center flex-wrap mb-10 md:px-20 lg:w-2/5 lg:mr-10 lg:h-96 lg:px-8 xl:w-1/4 xl:mr-10">
+    <div class="border-2 border-gray-400 bg-white py-6 px-7 flex items-center justify-center flex-wrap mb-10 md:px-20 lg:w-2/5 lg:mr-10 lg:h-96 lg:px-8 xl:w-1/4 xl:mr-10">
       <img src="img/icons/sensor.png" alt="Sensor icon" class="h-20">
       <div class="w-auto text-center mb-4">
         <p class="text-2xl text-blue-600 my-4">Détecteur</p>
@@ -59,7 +62,7 @@
     </div>
 
      <!-- App -->
-     <div class="border-2 border-gray-400 py-6 px-7 flex items-center justify-center flex-wrap mb-10 md:px-20 lg:w-2/5 lg:h-96 lg:px-8 xl:w-1/4 xl:mr-0">
+     <div class="border-2 border-gray-400 bg-white py-6 px-7 flex items-center justify-center flex-wrap mb-10 md:px-20 lg:w-2/5 lg:h-96 lg:px-8 xl:w-1/4 xl:mr-0">
       <img src="img/icons/cell-phone.png" alt="Cell phone icon" class="h-20">
       <div class="w-auto text-center mb-4">
         <p class="text-2xl text-blue-600 my-4">Application mobile</p>
@@ -67,7 +70,8 @@
       </div>
       <a href="{{ route('service') }}" class="border border-gray-600 px-5 text-xl hover:bg-blue-600 hover:text-white">Consulter les offres</a>
     </div>
-  
+    
   </div>
-
 </div>
+
+@endsection

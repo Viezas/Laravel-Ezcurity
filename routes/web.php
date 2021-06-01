@@ -14,11 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'homepage/welcome')->name('home');
+
+//Auh routes
 Route::view('/login', 'auth/login')->name('login');
 Route::view('/register', 'auth/register')->name('register');
+
+//Services routes
+Route::view('/services', 'services/services')->name('services');
+Route::view('/services/service', 'services/service')->name('service');
+
+//News routes
 Route::view('/news', 'articles/news')->name('news');
 Route::view('/news/{id}', 'articles/article')->name('article');
 Route::view('/search', 'articles/searchResult')->name('search');
-Route::view('/contact', 'contact/contact')->name('contact');
+
+//Subscribe routes
+//Route::view('/subscribe/{id}', 'stripe/subscribe')->name('subscribe');
 Route::view('/subscribe', 'stripe/subscribe')->name('subscribe');
-Route::view('/subscribe/confirmed', 'stripe/subscribed')->name('subscribed');
+Route::view('/subscribe/confirmed/', 'stripe/subscribed')->name('subscribed');
+
+//contact route
+Route::view('/contact', 'contact/contact')->name('contact');

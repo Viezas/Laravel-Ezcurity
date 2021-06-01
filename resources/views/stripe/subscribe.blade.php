@@ -38,7 +38,7 @@
 
       <div class="mb-4">
         <label for="discount">Code promo : </label>
-        <input type="text" name="discount" id="discount" class="border border-gray-600 w-full px-1" required>
+        <input type="text" name="discount" id="discount" class="border border-gray-600 w-full px-1">
         <small class="text-red-600">*champs obligatoire</small>
       </div>
 

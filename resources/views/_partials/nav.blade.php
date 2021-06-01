@@ -17,7 +17,7 @@
       <!-- Contain all links for non responsive -->
       <div class="hidden text-2xl" id="desktopMenu">
         <ul class="flex justify-end items-center">
-          <li class="border-b-2 border-transparent hover:border-blue-700"><a href="/">Services</a></li>
+          <li class="border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('services') }}">Services</a></li>
           <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('news') }}">Actualités</a></li>
           <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('contact') }}">Contact</a></li>
           <li class="ml-5">
@@ -53,7 +53,7 @@
           <button type="submit" class="border-2 border-blue-900 w-2/5 bg-blue-600 text-white md:w-1/4">Rechercher !</button>
         </form>
       </li>
-      <li class="mb-3 border-b-2 border-blue-600"><a href="/">Services</a></li>
+      <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('services') }}">Services</a></li>
       <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('news') }}">Actualités</a></li>
       <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('contact') }}">Contact</a></li>
     </ul>
