@@ -20,8 +20,15 @@
           <li class="border-b-2 border-transparent hover:border-blue-700"><a href="/">Services</a></li>
           <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="/">Actualités</a></li>
           <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="/">Contact</a></li>
-          <li class="ml-5"><a href="/">
-            <img src="img/search.png" alt="Search button" class="h-8">
+          <li class="ml-5">
+            <form class="flex items-center justify-end">
+              <input type="text" name="search" id="search" class="w-36 px-1 border-2 border-black focus:outline-none focus:border-blue-600 lg:w-full">
+              <button type="submit" class="border-2 border-blue-900 bg-blue-600 text-white ">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8" fill="none" viewBox="0 0 24 24" stroke="white">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
+            </form>
           </li>
           <a href="{{ route('login') }}">
             <li class="ml-5 px-10 py-1 text-base text-white border-2 border-blue-900 bg-blue-600 hover:bg-blue-800">Inscription/<br>Connexion</li>
@@ -42,7 +49,7 @@
     <ul>
       <li class="mb-3">
         <form class="flex">
-          <input type="text" class="border-2 border-black w-3/5 px-1 focus:outline-none focus:border-blue-600 md:w-3/4" placeholder="Votre recherche...">
+          <input type="text" name="search" id="search" class="border-2 border-black w-3/5 px-1 focus:outline-none focus:border-blue-600 md:w-3/4" placeholder="Votre recherche...">
           <button type="submit" class="border-2 border-blue-900 w-2/5 bg-blue-600 text-white md:w-1/4">Rechercher !</button>
         </form>
       </li>
