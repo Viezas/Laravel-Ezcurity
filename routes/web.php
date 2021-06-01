@@ -19,3 +19,4 @@ Route::view('/register', 'auth/register')->name('register');
 Route::view('/news', 'articles/news')->name('news');
 Route::view('/news/{id}', 'articles/article')->name('article');
 Route::view('/search', 'articles/searchResult')->name('search');
+Route::view('/contact', 'contact/contact')->name('contact');

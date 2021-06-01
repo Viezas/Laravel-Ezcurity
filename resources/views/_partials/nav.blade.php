@@ -19,7 +19,7 @@
         <ul class="flex justify-end items-center">
           <li class="border-b-2 border-transparent hover:border-blue-700"><a href="/">Services</a></li>
           <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('news') }}">Actualités</a></li>
-          <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="/">Contact</a></li>
+          <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('contact') }}">Contact</a></li>
           <li class="ml-5">
             <form class="flex items-center justify-end" action="{{ route('search') }}" method="GET">
               <input type="text" name="search" id="search" class="w-36 px-1 border-2 border-black focus:outline-none focus:border-blue-600 lg:w-full">
@@ -55,7 +55,7 @@
       </li>
       <li class="mb-3 border-b-2 border-blue-600"><a href="/">Services</a></li>
       <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('news') }}">Actualités</a></li>
-      <li class="mb-3 border-b-2 border-blue-600"><a href="/">Contact</a></li>
+      <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('contact') }}">Contact</a></li>
     </ul>
   </div>
 </nav>
