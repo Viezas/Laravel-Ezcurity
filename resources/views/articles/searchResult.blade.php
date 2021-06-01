@@ -18,9 +18,9 @@
             <img src="/img/news/sensor1.jpg" alt="sensor" class="max-h-52">
           </div>
 
-          <div class="p-2">
-            <p class="text-lg mb-2 text-center">Titre</p>  
-            <p class="text-center">                                       
+          <div class="p-2 text-center">
+            <p class="text-lg mb-2">Titre</p>  
+            <p>                                       
               Body
             </p>
             <a href="/" class="text-sm text-blue-600 hover:underline">En savoir plus</a>
@@ -36,9 +36,9 @@
             <img src="/img/news/sensor2.jpg" alt="sensor" class="max-h-52">
           </div>
 
-          <div class="p-2">
-            <p class="text-lg mb-2 text-center">Titre</p>  
-            <p class="text-center">                                       
+          <div class="p-2 text-center">
+            <p class="text-lg mb-2">Titre</p>  
+            <p>                                       
               Body
             </p>
             <a href="{{ route('article', ['id' => 1]) }}" class="text-sm text-blue-600 hover:underline">En savoir plus</a>
