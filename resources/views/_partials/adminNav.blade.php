@@ -17,10 +17,9 @@
       <!-- Contain all links for non responsive -->
       <div class="hidden text-2xl" id="desktopMenu">
         <ul class="flex justify-end items-center">
-          <li class="border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('profile') }}">Mes informations</a></li>
-          <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('profile.subscriptions') }}">Mes abonnements</a></li>
-          <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('profile.billing') }}">Mes facturations</a></li>
-          <li class="ml-5 border-b-2 border-transparent text-red-600 hover:border-red-700"><a href="{{ route('admin.users') }}">Administration</a></li>
+          <li class="border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('admin.users') }}">Utilisateurs</a></li>
+          <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('admin.news') }}">Actualités</a></li>
+          <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('admin.subscriptions') }}">Abonnements</a></li>
           <a href="{{ route('home') }}">
             <li class="ml-5 px-10 py-1 text-base text-white border-2 border-red-900 bg-red-600 hover:bg-red-800">Déconnexion</li>
           </a>
@@ -40,10 +39,9 @@
   <div class="hidden mt-2 text-lg" id="mobileMenu">
     <!-- Contain all links for responsive -->
     <ul>
-      <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('profile') }}">Mes informations</a></li>
-      <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('profile.subscriptions') }}">Mes abonnements</a></li>
-      <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('profile.billing') }}">Mes facturations</a></li>
-      <li class="mb-3 border-b-2 text-red-600 border-red-600"><a href="{{ route('admin.users') }}">Administration</a></li>
+      <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('admin.users') }}">Utilisateurs</a></li>
+      <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('admin.news') }}">Actualités</a></li>
+      <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('admin.subscriptions') }}">Abonnements</a></li>
     </ul>
   </div>
 </nav>

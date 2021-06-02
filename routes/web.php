@@ -40,3 +40,8 @@ Route::view('/contact', 'contact/contact')->name('contact');
 Route::view('/profile', 'profile/profile')->name('profile');
 Route::view('/profile/subscriptions', 'profile/subscriptions')->name('profile.subscriptions');
 Route::view('/profile/billing', 'profile/billing')->name('profile.billing');
+
+//Admin route
+Route::view('/admin/users', 'admin/users')->name('admin.users');
+Route::view('/admin/news', 'admin/news')->name('admin.news');
+Route::view('/admin/subscriptions', 'admin/subscriptions')->name('admin.subscriptions');
