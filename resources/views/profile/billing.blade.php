@@ -5,7 +5,7 @@
   
   <div class="border-2 border-black py-6 px-2 md:px-10 xl:px-20">
     <div class="mb-6">
-      <p class="text-blue-600 text-3xl text-center">Mes abonnements</p>
+      <p class="text-blue-600 text-3xl text-center">Mes factures</p>
     </div>
 
     <div class="border-b-2 border-blue-600 flex items-center justify-between mb-5">
