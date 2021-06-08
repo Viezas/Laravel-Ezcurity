@@ -7,33 +7,27 @@
     <!-- Section Title -->
     <div class="my-10 text-center">
       <p class="text-3xl mb-5"><span class="border-b-2 border-gray-400">Souscription</span></p>
-      <p>Détecteur de fumée : ZGMF-P07</p>
-      <p>Montant: 40€/mois*</p>
+      <p>{{ $service[0]->name}}</p>
+      <p>Montant: {{ $service[0]->price}}/mois*</p>
       <small>*prix TTC</small>
     </div>
 
-    <form action="{{ route('subscribed') }}" method="GET">
-
+    <form method="POST">
+      @csrf
       <div class="mb-4">
         <label for="email">Email<span class="text-red-600">*</span> : </label>
-        <input type="email" name="email" id="email" class="border border-gray-600 w-full px-1" autofocus required>
+        <input type="email" name="email" id="email" class="border border-gray-600 w-full px-1" value="{{ old('email') }}" autofocus>
+        @error('email')
+          <div class=" text-red-600">{{ $message }}</div>
+        @enderror
       </div>
 
       <div class="mb-4">
         <label for="phone">Numéro de téléphone<span class="text-red-600">*</span> : </label>
-        <input type="tel" name="phone" id="phone" class="border border-gray-600 w-full px-1" required>
-      </div>
-
-      <div class="mb-4 flex items-center justify-start flex-wrap">
-        <label for="phone">Informations de la carte<span class="text-red-600">*</span> : </label>
-        <input type="tel" name="phone" id="phone" class="border border-gray-600 w-full px-1" required placeholder="1234 1234 1234 1234">
-        <input type="month" name="expiration" id="expiration" class="border border-t-0 border-gray-600 w-1/2" required>
-        <input type="number" name="secret" id="secret" class="border border-t-0 border-gray-600 w-1/2 px-1" required placeholder="CVC">
-      </div>
-
-      <div class="mb-4">
-        <label for="name">Nom du titulaire de la carte<span class="text-red-600">*</span> : </label>
-        <input type="text" name="name" id="name" class="border border-gray-600 w-full px-1" required>
+        <input type="tel" name="phone" id="phone" class="border border-gray-600 w-full px-1" value="{{ old('phone') }}" >
+        @error('phone')
+          <div class=" text-red-600">{{ $message }}</div>
+        @enderror
       </div>
 
       <div class="mb-4">
