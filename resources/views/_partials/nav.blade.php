@@ -21,8 +21,9 @@
           <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('news') }}">Actualités</a></li>
           <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('contact') }}">Contact</a></li>
           <li class="ml-5">
-            <form class="flex items-center justify-end" action="{{ route('search') }}" method="GET">
-              <input type="text" name="search" id="search" class="w-36 px-1 border-2 border-black focus:outline-none focus:border-blue-600 lg:w-full">
+            <form class="flex items-center justify-end" action="{{ route('search') }}" method="POST">
+              @csrf
+              <input type="text" name="search" id="search" class="w-36 px-1 h-9 border-2 border-black focus:outline-none focus:border-blue-600 lg:w-full">
               <button type="submit" class="border-2 border-blue-900 bg-blue-600 text-white ">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8" fill="none" viewBox="0 0 24 24" stroke="white">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -30,9 +31,18 @@
               </button>
             </form>
           </li>
+
+          @if(!Auth::user())
           <a href="{{ route('login') }}">
             <li class="ml-5 px-10 py-1 text-base text-white border-2 border-blue-900 bg-blue-600 hover:bg-blue-800">Inscription/<br>Connexion</li>
           </a>
+          @endif
+
+          @if(Auth::user())
+          <a href="{{ route('profile') }}" class="ml-5">
+            <img src="/img/account.png" alt="Link to account" class="h-14">
+          </a>
+          @endif
         </ul>
       </div>
     </div>

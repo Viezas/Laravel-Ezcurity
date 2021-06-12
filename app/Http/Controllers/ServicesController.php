@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Subscriptions;
+use App\Models\Abonnement;
 use Config\information;
 use Illuminate\Http\Request;
 
@@ -19,7 +19,7 @@ class ServicesController extends Controller
             return redirect()->route('home')->with('denied', "Le service recherché n'est pas proposé !");
         }
         else {
-            $services = Subscriptions::where('category', $category)->get();
+            $services = Abonnement::where('category', $category)->get();
             return view('services/service', [
                 'services' => $services
             ]);

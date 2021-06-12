@@ -1,6 +1,14 @@
 @extends('layouts.default')
 @section('content')
 
+@if (session('success'))
+  <div class="bg-green-300 text-3xl text-center w-full py-5 mb-10 text-green-600">
+      <ul>
+        <li>{{ session('success') }}</li>
+      </ul>
+  </div>
+  @endif
+
 <div class="px-5 flex items-start justify-center flex-wrap mb-10">
   <div class="border-2 border-gray-600 w-full pb-10 mb-10 md:w-2/5 md:mr-10">
     <!-- Section Title -->

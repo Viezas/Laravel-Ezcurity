@@ -12,10 +12,10 @@
       <div class="py-2 px-2">  <!-- Article -->
         <p class="text-lg">{{ $news[0]->title }}</p><br>  <!-- Title -->
         <p>   <!-- Body -->                                     
-          {{ $news[0]->body }}
+        {{ strlen($news[0]->body) > 150 ? substr($news[0]->body,0,150)."..." : $news[0]->body }}
         </p><br>
-        <small>Post crée le : {{ $news[0]->created_at }}</small><br><br>  <!-- Date -->
-        <a href="/" class="bg-blue-600 text-lg text-white px-4 py-1">En savoir plus</a>   <!-- Link to full article -->
+        <small>Post crée le : {{ $news[0]->updated_at }}</small><br><br>  <!-- Date -->
+        <a href="{{ route('article', ['id' => $news[0]->id]) }}" class="bg-blue-600 text-lg text-white px-4 py-1">En savoir plus</a>   <!-- Link to full article -->
       </div>
     </div>
 
@@ -24,10 +24,10 @@
       <div class="py-2 px-2">  <!-- Article -->
         <p class="text-lg">{{ $news[1]->title }}</p><br>  <!-- Title -->
         <p>   <!-- Body -->                                     
-          {{ $news[1]->body }}
+        {{ strlen($news[1]->body) > 150 ? substr($news[1]->body,0,150)."..." : $news[1]->body }}
         </p><br>
-        <small>Post crée le : {{ $news[1]->created_at }}</small><br><br>  <!-- Date -->
-        <a href="/" class="bg-blue-600 text-lg text-white px-4 py-1">En savoir plus</a>   <!-- Link to full article -->
+        <small>Post crée le : {{ $news[1]->updated_at }}</small><br><br>  <!-- Date -->
+        <a href="{{ route('article', ['id' => $news[1]->id]) }}" class="bg-blue-600 text-lg text-white px-4 py-1">En savoir plus</a>   <!-- Link to full article -->
       </div>
     </div>
 
@@ -36,10 +36,10 @@
       <div class="py-2 px-2">  <!-- Article -->
         <p class="text-lg">{{ $news[2]->title }}</p><br>  <!-- Title -->
         <p>   <!-- Body -->                                     
-          {{ $news[2]->body }}
+        {{ strlen($news[2]->body) > 150 ? substr($news[2]->body,0,150)."..." : $news[2]->body }}        
         </p><br>
-        <small>Post crée le : {{ $news[2]->created_at }}</small><br><br>  <!-- Date -->
-        <a href="/" class="bg-blue-600 text-lg text-white px-4 py-1">En savoir plus</a>   <!-- Link to full article -->
+        <small>Post crée le : {{ $news[2]->updated_at }}</small><br><br>  <!-- Date -->
+        <a href="{{ route('article', ['id' => $news[2]->id]) }}" class="bg-blue-600 text-lg text-white px-4 py-1">En savoir plus</a>   <!-- Link to full article -->
       </div>
     </div>
 
@@ -48,10 +48,10 @@
       <div class="py-2 px-2">  <!-- Article -->
         <p class="text-lg">{{ $news[3]->title }}</p><br>  <!-- Title -->
         <p>   <!-- Body -->                                     
-          {{ $news[3]->body }}
+        {{ strlen($news[3]->body) > 150 ? substr($news[3]->body,0,150)."..." : $news[3]->body }}
         </p><br>
-        <small>Post crée le : {{ $news[3]->created_at }}</small><br><br>  <!-- Date -->
-        <a href="/" class="bg-blue-600 text-lg text-white px-4 py-1">En savoir plus</a>   <!-- Link to full article -->
+        <small>Post crée le : {{ $news[3]->updated_at }}</small><br><br>  <!-- Date -->
+        <a href="{{ route('article', ['id' => $news[3]->id]) }}" class="bg-blue-600 text-lg text-white px-4 py-1">En savoir plus</a>   <!-- Link to full article -->
       </div>
     </div>
 
@@ -60,10 +60,10 @@
       <div class="py-2 px-2">  <!-- Article -->
         <p class="text-lg">{{ $news[4]->title }}</p><br>  <!-- Title -->
         <p>   <!-- Body -->                                     
-          {{ $news[4]->body }}
+        {{ strlen($news[4]->body) > 150 ? substr($news[4]->body,0,150)."..." : $news[4]->body }}
         </p><br>
-        <small>Post crée le : {{ $news[4]->created_at }}</small><br><br>  <!-- Date -->
-        <a href="/" class="bg-blue-600 text-lg text-white px-4 py-1">En savoir plus</a>   <!-- Link to full article -->
+        <small>Post crée le : {{ $news[4]->updated_at }}</small><br><br>  <!-- Date -->
+        <a href="{{ route('article', ['id' => $news[4]->id]) }}" class="bg-blue-600 text-lg text-white px-4 py-1">En savoir plus</a>   <!-- Link to full article -->
       </div>
     </div>
 

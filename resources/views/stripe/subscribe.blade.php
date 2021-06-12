@@ -32,7 +32,7 @@
 
       <div class="mb-4">
         <label for="discount">Code promo : </label>
-        <input type="text" name="discount" id="discount" class="border border-gray-600 w-full px-1">
+        <input type="text" name="discount" id="discount" class="border border-gray-600 w-full px-1" value="{{ old('discount') }}">
         <small class="text-red-600">*champs obligatoire</small>
       </div>
 
@@ -46,5 +46,9 @@
   </div>
 
 </div>
+
+<script>
+  const stripe = Stripe('pk_test_51IzzWtHiPm1KQtiInfKCieXPa4i8woqvEV68k6kZBkAZqwHzeFYYsMgya1rT2FE9VH7hpUchJQV11cHz5olp2xh800DxLrz2mf');
+</script>
 
 @endsection

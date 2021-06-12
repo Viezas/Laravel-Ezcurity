@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Mail\SendMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -14,6 +16,8 @@ class ContactController extends Controller
 
     public function send(ContactRequest $request)
     {
-        dd('salut');
+        Mail::to('b3cd615f2b-918250@inbox.mailtrap.io')->send(new SendMail($request));
+
+        return redirect()->route('contact')->with('success', "Message envoyé !");
     }
 }

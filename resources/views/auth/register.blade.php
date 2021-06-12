@@ -1,44 +1,66 @@
-@extends('layouts.default')
-@section('content')
+<x-guest-layout>
+    <x-auth-card>
+        <x-slot name="logo">
+            <a href="/">
+                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            </a>
+        </x-slot>
 
-<div class="px-5 py-2 md:px-28 lg:px-56 xl:px-96">
+        <!-- Validation Errors -->
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-  <div class="mb-6 mt-5">
-    <p class="text-blue-600 text-3xl text-center">Inscription</p>
-  </div>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
 
-  <form action="{{ route('profile') }}" class="border-2 border-black flex justify-center items-center flex-wrap py-6 mb-10 md:px-20">
+            <!-- Name -->
+            <div>
+                <x-label for="username" :value="__('Username')" />
 
-    <!-- Name -->
-    <div class="w-5/6 mb-5">
-      <label for="name">Nom d'utilisateur<span class="text-red-600">*</span></label><br>
-      <input type="text" name="name" id="name" class="border border-gray-600 w-full px-1" autofocus required>
-    </div>
+                <x-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
+            </div>
 
-    <!-- Email -->
-    <div class="w-5/6 mb-5">
-      <label for="email">Email<span class="text-red-600">*</span></label><br>
-      <input type="text" name="email" id="email" class="border border-gray-600 w-full px-1" autofocus required>
-    </div>
+            <!-- Email Address -->
+            <div class="mt-4">
+                <x-label for="email" :value="__('Email')" />
 
-    <!-- Password  -->
-    <div class="w-5/6 mb-5">
-      <label for="password">Mot de passe<span class="text-red-600">*</span></label><br>
-      <input type="password" name="password" id="password" class="border border-gray-600 w-full px-1" autofocus required>
-    </div>
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            </div>
 
-    <!-- Tel  -->
-    <div class="w-5/6 mb-1">
-      <label for="phone">Numéro de téléphone<span class="text-red-600">*</span></label><br>
-      <input type="tel" name="phone" id="phone" class="border border-gray-600 w-full px-1" autofocus required>
-    </div>
+            <!-- Password -->
+            <div class="mt-4">
+                <x-label for="password" :value="__('Password')" />
 
-    <small class="text-red-600 w-5/6 mb-5">*champs obligatoire</small>
+                <x-input id="password" class="block mt-1 w-full"
+                                type="password"
+                                name="password"
+                                required autocomplete="new-password" />
+            </div>
 
-    <button type="submit" class="text-white bg-blue-600 border-2 border-blue-900 px-5 py-1 mb-2 hover:bg-blue-900">Inscription</button>
-    <small class="w-5/6 text-center">Vous possédez déjà compte ? <a href="{{ route('login') }}" class="text-blue-500 underline">Connectez-vous.</a></small>
-  </form>
-</div>
+            <!-- Confirm Password -->
+            <div class="mt-4">
+                <x-label for="password_confirmation" :value="__('Confirm Password')" />
 
+                <x-input id="password_confirmation" class="block mt-1 w-full"
+                                type="password"
+                                name="password_confirmation" required />
+            </div>
 
-@endsection
+            <!-- Phone -->
+            <div class="mt-4">
+                <x-label for="phone" :value="__('Phone')" />
+
+                <x-input id="phone" class="block mt-1 w-full" type="tel" name="phone" :value="old('phone')"  />
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                    {{ __('Already registered?') }}
+                </a>
+
+                <x-button class="ml-4">
+                    {{ __('Register') }}
+                </x-button>
+            </div>
+        </form>
+    </x-auth-card>
+</x-guest-layout>

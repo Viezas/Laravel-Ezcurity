@@ -1,31 +1,62 @@
-@extends('layouts.default')
-@section('content')
+<x-guest-layout>
+    <x-auth-card>
+        @if (session('denied'))
+            <div class="bg-red-300 text-xl text-center w-full py-5 mb-10 text-red-600">
+                <ul>
+                    <li>{{ session('denied') }}</li>
+                </ul>
+            </div>
+        @endif
 
-<div class="px-5 py-2 md:px-28 lg:px-56 xl:px-96">
+        <x-slot name="logo">
+            <a href="/">
+                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            </a>
+        </x-slot>
 
-  <div class="mb-6 mt-5">
-    <p class="text-blue-600 text-3xl text-center">Connexion</p>
-  </div>
+        <!-- Session Status -->
+        <x-auth-session-status class="mb-4" :status="session('status')" />
 
-  <form action="{{ route('profile') }}" class="border-2 border-black flex justify-center items-center flex-wrap py-6 mb-10 md:px-20">
+        <!-- Validation Errors -->
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-    <!-- Email -->
-    <div class="w-5/6 mb-5">
-      <label for="email">Email<span class="text-red-600">*</span></label><br>
-      <input type="text" name="email" id="email" class="border border-gray-600 w-full px-1" autofocus required>
-    </div>
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
 
-    <!-- Password  -->
-    <div class="w-5/6 mb-1">
-      <label for="password">Mot de passe<span class="text-red-600">*</span></label><br>
-      <input type="password" name="password" id="password" class="border border-gray-600 w-full px-1" autofocus required>
-    </div>
+            <!-- Email Address -->
+            <div>
+                <x-label for="email" :value="__('Email')" />
 
-    <small class="text-red-600 w-5/6 mb-5">*champs obligatoire</small>
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            </div>
 
-    <button type="submit" class="text-white bg-blue-600 border-2 border-blue-900 px-5 py-1 mb-2 hover:bg-blue-900">Connexion</button>
-    <small class="w-5/6 text-center">Vous n'avez pas encore de compte ? <a href="{{ route('register') }}" class="text-blue-500 underline">Cliquez ici.</a></small>
-  </form>
-</div>
+            <!-- Password -->
+            <div class="mt-4">
+                <x-label for="password" :value="__('Password')" />
 
-@endsection
+                <x-input id="password" class="block mt-1 w-full"
+                                type="password"
+                                name="password"
+                                required autocomplete="current-password" />
+            </div>
+
+            <!-- Remember Me -->
+            <div class="block mt-4">
+                <label for="remember_me" class="inline-flex items-center">
+                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                </label>
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                    Create an account!
+                </a>
+
+                <x-button class="ml-3">
+                    {{ __('Log in') }}
+                </x-button>
+            </div>
+        </form>
+    </x-auth-card>
+</x-guest-layout>

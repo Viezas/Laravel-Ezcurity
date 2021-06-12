@@ -19,20 +19,23 @@
         <ul class="flex justify-end items-center">
           <li class="border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('admin.users') }}">Utilisateurs</a></li>
           <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('admin.news') }}">Actualités</a></li>
-          <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('admin.subscriptions') }}">Abonnements</a></li>
-          <a href="{{ route('home') }}">
-            <li class="ml-5 px-10 py-1 text-base text-white border-2 border-red-900 bg-red-600 hover:bg-red-800">Déconnexion</li>
-          </a>
+          <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="ml-5 px-10 py-1 text-base text-white border-2 border-red-900 bg-red-600 hover:bg-red-800">Déconnexion</button>
+          </form>
         </ul>
       </div>
     </div>
 
-    <!-- Account button -->
-    <a href="{{ route('home') }}" class="lg:hidden">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 md:h-16" fill="none" viewBox="0 0 24 24" stroke="red">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-      </svg>
-    </a>
+    <!-- Logout button -->
+    <form method="POST" action="{{ route('logout') }}" class="lg:hidden">
+      @csrf
+      <button type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 md:h-16" fill="none" viewBox="0 0 24 24" stroke="red">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+        </svg>
+      </button>
+    </form>
   </div>
 
   <!-- Responsive navbar-->
@@ -41,7 +44,6 @@
     <ul>
       <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('admin.users') }}">Utilisateurs</a></li>
       <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('admin.news') }}">Actualités</a></li>
-      <li class="mb-3 border-b-2 border-blue-600"><a href="{{ route('admin.subscriptions') }}">Abonnements</a></li>
     </ul>
   </div>
 </nav>
