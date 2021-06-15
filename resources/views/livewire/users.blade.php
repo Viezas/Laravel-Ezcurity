@@ -27,6 +27,7 @@
             </svg>
           @endif
         </td>
+        @if(!$user->isAdmin || Auth::user()->id == $user->id)
         <td class="border-r border-gray-400">
           <a href="{{ route('admin.showUpdateForm.user', ['id' => $user->id]) }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="orange">
@@ -34,6 +35,7 @@
             </svg>
           </a>
         </td>
+        @endif
         @if(!$user->isAdmin)
         <td>
           <form method="POST" action="{{ route('admin.delete.user', ['id' => $user->id]) }}">

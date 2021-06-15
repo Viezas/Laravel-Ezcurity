@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Abonnement;
+use Config\information;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -22,6 +24,13 @@ class CreateAbonnementsTable extends Migration
             $table->string('stripe_id');
             $table->timestamps();
         });
+
+        $defaultServices = information::defaultServices();
+        for ($i=0; $i < 5; $i++) { 
+            Abonnement::insert([
+                $defaultServices[$i]
+            ]);
+        }
     }
 
     /**

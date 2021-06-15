@@ -41,7 +41,7 @@
     <!-- dates -->
     <div class="w-5/6 mb-5">
       <label for="publish">Date de publication</label><br>
-      <input type="date" name="published" id="published" min="Carbon::now()" value="{{ $article->updated_at->format('Y-m-d') }}">
+      <input type="date" name="published" id="published" min="Carbon::now()" value="{{ date('Y-m-d', strtotime($article->published_at)) }}">
     </div>
 
     <!-- Image -->
