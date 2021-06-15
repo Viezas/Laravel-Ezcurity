@@ -34,6 +34,7 @@
             </svg>
           </a>
         </td>
+        @if(!$user->isAdmin)
         <td>
           <form method="POST" action="{{ route('admin.delete.user', ['id' => $user->id]) }}">
             @csrf
@@ -44,6 +45,7 @@
             </button>
           </form>
         </td>
+        @endif
       </tr>
     @endforeach
     <div class="w-full flex items-center justify-center mt-10">

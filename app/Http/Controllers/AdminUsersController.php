@@ -79,6 +79,10 @@ class AdminUsersController extends Controller
         if($user->isEmpty()){
             return redirect()->route('admin.users')->with('denied', "Cet utilisateur n'existe pas !");
         }
+
+        if($user[0]->isAdmin && $user[0]->id != Auth::user()->id){
+            return redirect()->route('admin.users')->with('denied', "Vous n'avez pas le droit de supprimer un autre admin !");
+        }
         
         if(User::where('id', $id)->delete()){
             return redirect()->route('admin.users')->with('success', "Utilisateur supprimé !");
