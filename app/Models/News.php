@@ -14,6 +14,7 @@ class News extends Model
         'body',
         'img',
         'published',
+        'published_at',
     ];
 
     public function user()

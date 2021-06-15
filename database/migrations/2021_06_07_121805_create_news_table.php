@@ -24,6 +24,7 @@ class CreateNewsTable extends Migration
             $table->longText('body');
             $table->string('img');
             $table->boolean('published');
+            $table->timestamp('published_at');
             $table->timestamps();
             $table->foreignId('user_id')
                     ->constrained()
@@ -42,6 +43,7 @@ class CreateNewsTable extends Migration
                     'user_id' => '1',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
+                    'published_at' => Carbon::now(),
                 ]
             );
         }

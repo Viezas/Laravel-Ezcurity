@@ -20,4 +20,16 @@ class ContactController extends Controller
 
         return redirect()->route('contact')->with('success', "Message envoyé !");
     }
+
+    //API CONTROLLER
+
+    public function apiSend(ContactRequest $request)
+    {
+        Mail::to('b3cd615f2b-918250@inbox.mailtrap.io')->send(new SendMail($request));
+
+        return response()->json([
+            'success' => true,
+            'message' => "Votre email a été envoyé !"
+        ], 204);
+    }
 }

@@ -25,4 +25,23 @@ class ServicesController extends Controller
             ]);
         }
     }
+
+    //API CONTROLLER
+
+    public function apiServices(string $category)
+    {
+        if (!in_array($category, information::allowedServices()) ) {
+            return response()->json([
+                'success' => false,
+                'message' => "Le service recherché n'est pas proposé  !"
+            ], 404);
+        }
+        else {
+            $services = Abonnement::where('category', $category)->get();
+            return response()->json([
+                'success' => true,
+                "${category}" => $services
+            ], 200);
+        }
+    }
 }

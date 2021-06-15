@@ -10,7 +10,7 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $news = News::where('updated_at', '<=', Carbon::now())->orderBy('updated_at', 'asc')->get();
+        $news = News::where('published_at', '<=', Carbon::now())->orderBy('published_at', 'asc')->get();
         return view('articles/news', [
             'news' => $news
         ]);
@@ -44,5 +44,38 @@ class NewsController extends Controller
         return view('articles/news', [
             'news' => $news
         ]);
+    }
+
+    //API CONTROLLER HERE
+
+    public function apiNews()
+    {
+        $news = News::where('published_at', '<=', Carbon::now())->orderBy('published_at', 'asc')->get();
+        return response()->json([
+            'success' => true, 
+            $news
+        ], 200);
+    }
+
+    public function apiShow(int $id)
+    {
+        try {
+            $article = News::where('id', $id)->get();
+            if ($article->isEmpty()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => "L'article demandé n'existe pas !"
+                ], 404);
+            }
+            return response()->json([
+                'success' => true,
+                'article' => $article
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'success' => false,
+                'message' => "L'article demandé n'existe pas !"
+            ], 404);
+        }     
     }
 }
