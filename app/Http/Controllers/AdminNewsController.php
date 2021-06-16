@@ -56,9 +56,14 @@ class AdminNewsController extends Controller
     public function delete(int $id)
     {
         $article = News::where('id', $id)->get();
+        $activatedNews = News::where('published', true)->get();
 
         if($article->isEmpty()){
             return redirect()->route('admin.news')->with('denied', "Cet article n'existe pas !");
+        }
+
+        if (count($activatedNews) < 6) {
+            return redirect()->route('admin.news')->with('denied', "Impossible de supprimer cette article car il doit y en avoir 5 minimum !");
         }
         
         $result = cloudinary()->destroy($article[0]->img_id);
