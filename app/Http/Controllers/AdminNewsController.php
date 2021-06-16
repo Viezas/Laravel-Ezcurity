@@ -36,7 +36,7 @@ class AdminNewsController extends Controller
                 'title' => $request->title,
                 'body' => $request->body,
                 'published' => $request->publish == "true" || count($activatedNews) < 6 ? true : false,
-                'published_at' => count($activatedNews) < 6 ? $request->published : $article[0]->published_at
+                'published_at' => count($activatedNews) < 6 ? $article[0]->published_at : $request->published
             ]);
         }
         else{
@@ -48,7 +48,6 @@ class AdminNewsController extends Controller
                 'img_id' => $result->getPublicId(),
                 'published' => $request->publish == "true" || count($activatedNews) < 5 ? true : false,
                 'published_at' => count($activatedNews) < 6 ? $article[0]->published_at : $request->published
-
             ]);
         }
         return redirect()->route('admin.news')->with('success', "Article modifié !");
