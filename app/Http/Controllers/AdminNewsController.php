@@ -30,17 +30,27 @@ class AdminNewsController extends Controller
     public function update(NewsRequest $request, int $id)
     {
         $article = News::where('id', $id)->get();
-        $result  = $request->img->storeOnCloudinary();
-        News::where('id', $id)->update([
-            'title' => $request->title,
-            'body' => $request->body,
-            'img_url' => $result->getSecurePath(),
-            'img_id' => $result->getPublicId(),
-            'published' => $request->publish == "true" ? true : false,
-            'published_at' => $request->published
+        if (!$request->img) {
+            News::where('id', $id)->update([
+                'title' => $request->title,
+                'body' => $request->body,
+                'published' => $request->publish == "true" ? true : false,
+                'published_at' => $request->published
+    
+            ]);
+        }
+        else{
+            $result  = $request->img->storeOnCloudinary();
+            News::where('id', $id)->update([
+                'title' => $request->title,
+                'body' => $request->body,
+                'img_url' => $result->getSecurePath(),
+                'img_id' => $result->getPublicId(),
+                'published' => $request->publish == "true" ? true : false,
+                'published_at' => $request->published
 
-        ]);
-
+            ]);
+        }
         return redirect()->route('admin.news')->with('success', "Article modifié !");
     }
 
