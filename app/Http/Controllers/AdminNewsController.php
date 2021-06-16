@@ -31,7 +31,6 @@ class AdminNewsController extends Controller
     {
         $article = News::where('id', $id)->get();
         $result  = $request->img->storeOnCloudinary();
-        dd('Secure Path : ',$result->getSecurePath(), 'Public Id : ',$result->getPublicId());
         News::where('id', $id)->update([
             'title' => $request->title,
             'body' => $request->body,
