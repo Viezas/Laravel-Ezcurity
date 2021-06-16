@@ -47,7 +47,7 @@ class AdminNewsController extends Controller
                 'img_url' => $result->getSecurePath(),
                 'img_id' => $result->getPublicId(),
                 'published' => $request->publish == "true" || count($activatedNews) < 5 ? true : false,
-                'published_at' => count($activatedNews) < 6 ? $request->published : $article[0]->published_at
+                'published_at' => count($activatedNews) <= 5 ? $article[0]->published_at : $request->published
 
             ]);
         }
