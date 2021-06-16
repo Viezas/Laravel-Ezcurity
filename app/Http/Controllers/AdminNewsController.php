@@ -61,8 +61,9 @@ class AdminNewsController extends Controller
             return redirect()->route('admin.news')->with('denied', "Cet article n'existe pas !");
         }
         
-        if(News::where('id', $id)->delete()){
-            return redirect()->route('admin.news')->with('success', "Article supprimé !");
-        }
+        $result = cloudinary()->destroy($article[0]->img_id);
+        News::where('id', $id)->delete();
+        return redirect()->route('admin.news')->with('success', "Article supprimé !");
+        
     }
 }
