@@ -22,7 +22,8 @@ class CreateNewsTable extends Migration
             $table->id();
             $table->string('title');
             $table->longText('body');
-            $table->string('img');
+            $table->string('img_url');
+            $table->string('img_id');
             $table->boolean('published');
             $table->timestamp('published_at');
             $table->timestamps();
