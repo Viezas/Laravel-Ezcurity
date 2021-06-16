@@ -30,13 +30,14 @@ class AdminNewsController extends Controller
     public function update(NewsRequest $request, int $id)
     {
         $article = News::where('id', $id)->get();
+        $activatedNews = News::where('published', true)->get();
+        dd(count($activatedNews));
         if (!$request->img) {
             News::where('id', $id)->update([
                 'title' => $request->title,
                 'body' => $request->body,
-                'published' => $request->publish == "true" ? true : false,
+                'published' => $request->publish == "true" || count($activatedNews) < 5 ? true : false,
                 'published_at' => $request->published
-    
             ]);
         }
         else{
@@ -46,7 +47,7 @@ class AdminNewsController extends Controller
                 'body' => $request->body,
                 'img_url' => $result->getSecurePath(),
                 'img_id' => $result->getPublicId(),
-                'published' => $request->publish == "true" ? true : false,
+                'published' => $request->publish == "true" || count($activatedNews) < 5 ? true : false,
                 'published_at' => $request->published
 
             ]);
