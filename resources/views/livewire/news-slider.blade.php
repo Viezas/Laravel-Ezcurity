@@ -8,7 +8,9 @@
 
   <div class="border-2 border-black"> <!-- A slide -->
     <div class="active" id="slide-1">   <!-- Content -->
-      <img src="img/news-bg.jpg" alt="news background" class="pb-1 border-b-2 border-black">  <!-- Image -->
+      <div class="flex items-center justify-center">
+        <img src="{{ $news[0]->img_url }}" alt="news background" class="pb-1 border-b-2 border-black">  <!-- Image -->
+      </div>
       <div class="py-2 px-2">  <!-- Article -->
         <p class="text-lg">{{ $news[0]->title }}</p><br>  <!-- Title -->
         <p>   <!-- Body -->                                     
@@ -20,7 +22,9 @@
     </div>
 
     <div class="hidden" id="slide-2">   <!-- Content -->
-      <img src="img/news-bg.jpg" alt="news background" class="pb-1 border-b-2 border-black">  <!-- Image -->
+       <div class="flex items-center justify-center">
+        <img src="{{ $news[1]->img_url }}" alt="news background" class="pb-1 border-b-2 border-black">  <!-- Image -->
+      </div>  <!-- Image -->
       <div class="py-2 px-2">  <!-- Article -->
         <p class="text-lg">{{ $news[1]->title }}</p><br>  <!-- Title -->
         <p>   <!-- Body -->                                     
@@ -32,7 +36,9 @@
     </div>
 
     <div class="hidden" id="slide-3">   <!-- Content -->
-      <img src="img/news-bg.jpg" alt="news background" class="pb-1 border-b-2 border-black">  <!-- Image -->
+       <div class="flex items-center justify-center">
+        <img src="{{ $news[2]->img_url }}" alt="news background" class="pb-1 border-b-2 border-black">  <!-- Image -->
+      </div> <!-- Image -->
       <div class="py-2 px-2">  <!-- Article -->
         <p class="text-lg">{{ $news[2]->title }}</p><br>  <!-- Title -->
         <p>   <!-- Body -->                                     
@@ -44,7 +50,9 @@
     </div>
 
     <div class="hidden" id="slide-4">   <!-- Content -->
-      <img src="img/news-bg.jpg" alt="news background" class="pb-1 border-b-2 border-black">  <!-- Image -->
+       <div class="flex items-center justify-center">
+        <img src="{{ $news[3]->img_url }}" alt="news background" class="pb-1 border-b-2 border-black">  <!-- Image -->
+      </div>  <!-- Image -->
       <div class="py-2 px-2">  <!-- Article -->
         <p class="text-lg">{{ $news[3]->title }}</p><br>  <!-- Title -->
         <p>   <!-- Body -->                                     
@@ -56,7 +64,9 @@
     </div>
 
     <div class="hidden" id="slide-5">   <!-- Content -->
-      <img src="img/news-bg.jpg" alt="news background" class="pb-1 border-b-2 border-black">  <!-- Image -->
+       <div class="flex items-center justify-center">
+        <img src="{{ $news[4]->img_url }}" alt="news background" class="pb-1 border-b-2 border-black">  <!-- Image -->
+      </div>  <!-- Image -->
       <div class="py-2 px-2">  <!-- Article -->
         <p class="text-lg">{{ $news[4]->title }}</p><br>  <!-- Title -->
         <p>   <!-- Body -->                                     

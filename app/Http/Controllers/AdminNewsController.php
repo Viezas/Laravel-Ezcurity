@@ -36,7 +36,7 @@ class AdminNewsController extends Controller
             'body' => $request->body,
             'img_url' => $result->getSecurePath(),
             'img_id' => $result->getPublicId(),
-            'published' => $request->published == "true" ? true : false,
+            'published' => $request->publish == "true" ? true : false,
             'published_at' => $request->published
 
         ]);
