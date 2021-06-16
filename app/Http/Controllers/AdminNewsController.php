@@ -31,6 +31,7 @@ class AdminNewsController extends Controller
     {
         $article = News::where('id', $id)->get();
         $activatedNews = News::where('published', true)->get();
+        dd(count($activatedNews) < 6 ? $article[0]->published_at : $request->published);
         if (!$request->img) {
             News::where('id', $id)->update([
                 'title' => $request->title,
