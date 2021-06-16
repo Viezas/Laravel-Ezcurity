@@ -35,7 +35,7 @@ class AdminNewsController extends Controller
             News::where('id', $id)->update([
                 'title' => $request->title,
                 'body' => $request->body,
-                'published' => $request->publish == "true" || count($activatedNews) < 5 ? true : false,
+                'published' => $request->publish == "true" || count($activatedNews) < 6 ? true : false,
                 'published_at' => $request->published
             ]);
         }
