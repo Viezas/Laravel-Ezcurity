@@ -18,7 +18,7 @@
 
 <div class="px-5 py-2 md:px-28 lg:px-56 xl:px-96">
 
-  <form action="{{ route('admin.update.news', ['id' => $article->id]) }}" method="POST" class="border-2 border-black flex justify-center items-center flex-wrap py-6 mb-10 md:px-20">
+  <form action="{{ route('admin.update.news', ['id' => $article->id]) }}" method="POST" enctype="multipart/form-data" class="border-2 border-black flex justify-center items-center flex-wrap py-6 mb-10 md:px-20">
   @csrf
     <!-- Title -->
     <div class="w-5/6 mb-5">
@@ -47,7 +47,10 @@
     <!-- Image -->
     <div class="w-5/6 mb-5">
       <label for="img">Image</label><br>
-      <input type="file" name="img" id="img" accept="image/png, image/jpeg">
+      <input type="file" name="img" id="img">
+      @error('img')
+        <div class=" text-red-600">{{ $message }}</div>
+      @enderror
     </div>
 
     <!-- publish -->

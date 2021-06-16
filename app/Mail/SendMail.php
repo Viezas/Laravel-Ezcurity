@@ -11,6 +11,7 @@ class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $params;
     /**
      * Create a new message instance.
      *

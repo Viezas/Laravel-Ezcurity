@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\News;
-
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use Illuminate\Support\Facades\Http;
 
 class AdminNewsController extends Controller
 {
@@ -25,9 +27,11 @@ class AdminNewsController extends Controller
         ]);
     }
     
-    public function update(int $id)
+    public function update(NewsRequest $request, int $id)
     {
-        dd('salut');
+        $article = News::where('id', $id)->get();
+        $response = $request->img->storeOnCloudinary();
+        dd($response);
     }
 
     public function delete(int $id)
