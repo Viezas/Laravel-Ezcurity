@@ -35,7 +35,7 @@ class CreateUsersTable extends Migration
         User::insert([
             'username' => 'admin',
             'email' => 'admin@gmail.com',
-            'password' => 'wxcvbnqsdfghjklmazertyuiop',
+            'password' => Hash::make('azertyuiop'),
             'isAdmin' => true,
             'phone' => '0000000001',
             'created_at' => Carbon::now(),
