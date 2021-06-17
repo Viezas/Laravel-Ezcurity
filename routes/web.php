@@ -54,6 +54,8 @@ Route::middleware('auth:sanctum')->post('/admin/users/update/{id}', [AdminUsersC
 Route::middleware('auth:sanctum')->post('/admin/users/delete/{id}', [AdminUsersController::class, 'delete'])->name('admin.delete.user');
 
 Route::middleware('auth:sanctum')->get('/admin/news', [AdminNewsController::class, 'news'])->name('admin.news');
+Route::middleware('auth:sanctum')->get('/admin/news/create', [AdminNewsController::class, 'showCreate'])->name('admin.news.showCreate');
+Route::middleware('auth:sanctum')->post('/admin/news/create', [AdminNewsController::class, 'create'])->name('admin.news.create');
 Route::middleware('auth:sanctum')->get('/admin/news/{id}', [AdminNewsController::class, 'show'])->name('admin.news.show');
 Route::middleware('auth:sanctum')->post('/admin/news/update/{id}', [AdminNewsController::class, 'update'])->name('admin.update.news');
 Route::middleware('auth:sanctum')->post('/admin/news/delete/{id}', [AdminNewsController::class, 'delete'])->name('admin.delete.news');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewsCreateRequest;
 use App\Http\Requests\NewsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +18,16 @@ class AdminNewsController extends Controller
             return redirect()->route('home')->with('denied', "Vous n'avez pas l'autorisation d'entrer sur cette page !");
         }
         return view('admin/news');
+    }
+
+    public function showCreate()
+    {
+        return view('admin/createNews');
+    }
+
+    public function create(NewsCreateRequest $request)
+    {
+        dd('salut');
     }
 
     public function show(int $id)

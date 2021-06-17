@@ -1,3 +1,7 @@
+<div class="flex items-center justify-center mb-10 text-xl">
+  <a href="{{ route('admin.news.showCreate') }}" class="text-blue-900 bg-blue-300 border border-blue-600 px-10 py-2">Créer un nouvel article</a>
+</div>
+
 <div class="mb-10  flex items-center justify-center flex-wrap-reverse">
   <table class="w-full border-2 border-gray-400 md:w-5/6">
     <thead>
