@@ -27,7 +27,17 @@ class AdminNewsController extends Controller
 
     public function create(NewsCreateRequest $request)
     {
-        dd('salut');
+        $result = $request->img->storeOnCloudinary();
+        News::create([
+            'title' => $request->title,
+            'body' => $request->body,
+            'img_url' => $result->getSecurePath(),
+            'img_id' => $result->getPublicId(),
+            'published' => $request->publish == "true" ? true : false,
+            'published_at' => $request->published,
+            'user_id' => Auth::user()->id
+        ]);
+        return redirect()->route('admin.news')->with('success', "Article crée !");
     }
 
     public function show(int $id)

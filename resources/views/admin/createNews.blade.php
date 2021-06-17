@@ -47,7 +47,7 @@
       <small class="text-red-600">*Champs obligatoire</small>
 
     </div>
-    <button type="submit" class="bg-yellow-600 border-2 border-yellow-900 px-5 py-1 my-2 hover:bg-yellow-900">Modifier</button>
+    <button type="submit" class="bg-green-600 border-2 border-green-900 px-5 py-1 my-2 hover:bg-green-900">Crée</button>
   </form>
 </div>
 @endsection

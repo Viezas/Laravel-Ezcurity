@@ -39,8 +39,8 @@ class CreateNewsTable extends Migration
                 [
                     'title' => $this->faker->realText($maxNbChars = 20),
                     'body' => $this->faker->realText($maxNbChars = 1000),
-                    'img_url' => 'https://res.cloudinary.com/dyh5iokvj/image/upload/v1623532608/sample.jpg',
-                    'img_id' => 'sample',
+                    'img_url' => 'https://res.cloudinary.com/dyh5iokvj/image/upload/v1623947546/llewhq7oxv9sko9baaol.jpg',
+                    'img_id' => 'news-bg_ufjzjp',
                     'published' => true,
                     'user_id' => '1',
                     'created_at' => Carbon::now(),
