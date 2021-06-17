@@ -26,7 +26,7 @@
       <a href="{{ route('article', ['id' => $actuality->id]) }}">
         <div>
           <div class="border-b-2 border-black w-full flex items-center justify-center">
-            <img src="/img/news/sensor1.jpg" alt="sensor" class="max-h-52">
+            <img src="{{$actuality->img_url}}" alt="illustration image" class="max-h-52">
           </div>
 
           <div class="p-2 text-center">
