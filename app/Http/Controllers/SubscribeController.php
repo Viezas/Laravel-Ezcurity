@@ -40,6 +40,7 @@ class SubscribeController extends Controller
 
             try {
                 Auth::user()->newSubscription('default', $service[0]->stripe_id)
+                ->withCoupon($request->discount)
                 ->create($request->token);
             } catch (\Throwable $th) {
                 return redirect(url()->previous())->with('denied', "Le code promo est invalid !");
