@@ -18,6 +18,7 @@
       <div class="hidden text-2xl" id="desktopMenu">
         <ul class="flex justify-end items-center">
           <li class="border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('admin.users') }}">Utilisateurs</a></li>
+          <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('admin.subscriptions') }}">Abonnements</a></li>
           <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('admin.news') }}">Actualités</a></li>
           <form method="POST" action="{{ route('logout') }}">
             @csrf

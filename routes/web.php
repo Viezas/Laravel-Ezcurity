@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminNewsController;
+use App\Http\Controllers\AdminSubscriptionsController;
 use App\Http\Controllers\AdminUsersController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\IndexController;
@@ -59,6 +60,7 @@ Route::middleware('auth:sanctum')->post('/admin/news/create', [AdminNewsControll
 Route::middleware('auth:sanctum')->get('/admin/news/{id}', [AdminNewsController::class, 'show'])->name('admin.news.show');
 Route::middleware('auth:sanctum')->post('/admin/news/update/{id}', [AdminNewsController::class, 'update'])->name('admin.update.news');
 Route::middleware('auth:sanctum')->post('/admin/news/delete/{id}', [AdminNewsController::class, 'delete'])->name('admin.delete.news');
-//Route::middleware('auth:sanctum')->get('/admin/subscriptions', [AdminController::class, 'subscriptions'])->name('admin.subscriptions');
+
+Route::middleware('auth:sanctum')->get('/admin/subscriptions', [AdminSubscriptionsController::class, 'index'])->name('admin.subscriptions');
 
 require __DIR__.'/auth.php';
