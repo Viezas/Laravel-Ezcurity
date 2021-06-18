@@ -18,7 +18,7 @@
       <div class="hidden text-2xl" id="desktopMenu">
         <ul class="flex justify-end items-center">
           <li class="border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('profile') }}">Mes informations</a></li>
-          <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('profile.subscriptions') }}">Mes abonnements</a></li>
+          <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ Auth::user()->billingPortalUrl(route('profile.subscriptions')) }}">Mes abonnements</a></li>
           <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('profile.billing') }}">Mes facturations</a></li>
           
           @if(Auth::user()->isAdmin == true)
