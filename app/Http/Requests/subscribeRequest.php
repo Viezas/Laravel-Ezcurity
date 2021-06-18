@@ -24,8 +24,7 @@ class subscribeRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'discount' => 'nullable'
+            'name' => 'required'
         ];
     }
 
