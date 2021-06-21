@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,7 @@ class AuthController extends Controller
         $token = $user->createToken($random)->plainTextToken;
         return response()->json([
             'token' => $token,
-            'name' => $user->name,
+            'name' => $user->username,
             'email' => $user->email
         ], 200);
     }
@@ -49,6 +50,15 @@ class AuthController extends Controller
             return response()->json([
                 'success' => false,
                 "message" => "Le name est invalid !"
+            ], 409);
+        }
+
+        $exist = User::where('phone', $request->phone)->exists();
+        if($exist)
+        {
+            return response()->json([
+                'success' => false,
+                "message" => "Le numéro de téléphone est invalid !"
             ], 409);
         }
 
@@ -84,13 +94,29 @@ class AuthController extends Controller
     public function me()
     {
         $user = User::where('email', Auth::user()->email)->get();
+        return response()->json($user, 200);
+    }
+
+    //Me Update route
+    public function meUpdate(UpdateUserRequest $request)
+    {
+        if(!$request->password){
+            User::where('id', Auth::user()->id)->update([
+                'username' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone
+            ]);
+        } else {
+            User::where('id', Auth::user()->id)->update([
+                'username' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'password' => Hash::make($request->password)
+            ]);
+        }
         return response()->json([
             'success' => true,
-            'id' => $user[0]->id,
-            'name' => $user[0]->username,
-            'email' => $user[0]->email,
-            'created_at' => $user[0]->created_at,
-            'updated_at' => $user[0]->updated_at
+            'message' => 'Profile mise à jour !'
         ], 200);
     }
 }

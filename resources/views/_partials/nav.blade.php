@@ -20,7 +20,7 @@
           <li class="border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('services') }}">Services</a></li>
           <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('news') }}">Actualités</a></li>
           <li class="ml-5 border-b-2 border-transparent hover:border-blue-700"><a href="{{ route('contact') }}">Contact</a></li>
-          <li class="ml-5">
+          <!-- <li class="ml-5">
             <form class="flex items-center justify-end" action="{{ route('search') }}" method="POST">
               @csrf
               <input type="text" name="search" id="search" class="w-36 px-1 h-9 border-2 border-black focus:outline-none focus:border-blue-600 lg:w-full">
@@ -30,7 +30,7 @@
                 </svg>
               </button>
             </form>
-          </li>
+          </li> -->
 
           @if(!Auth::user())
           <a href="{{ route('login') }}">

@@ -30,6 +30,6 @@ class ContactController extends Controller
         return response()->json([
             'success' => true,
             'message' => "Votre email a été envoyé !"
-        ], 204);
+        ], 200);
     }
 }

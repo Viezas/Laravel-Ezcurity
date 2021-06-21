@@ -39,12 +39,20 @@ class ProfileController extends Controller
         }
 
         User::where('id', Auth::user()->id)->update([
-                'username' => $request->name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'password' => Hash::make($request->password)
-            ]);
+            'username' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'password' => Hash::make($request->password)
+        ]);
 
         return redirect()->route('profile')->with('success', "Votre compte a été mise à jour !");
+    }
+
+    //API routes
+
+    public function me()
+    {
+        // $user = User::where('id', Auth::user()->id)->get();
+        return response()->json(Auth::user(), 200);
     }
 }
