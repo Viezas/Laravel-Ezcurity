@@ -58,7 +58,7 @@
     <!-- Contain all links for responsive -->
     <ul>
       <li class="mb-3">
-        <form class="flex" action="{{ route('search') }}" method="GET">
+        <form class="flex" action="{{ route('search') }}" method="POST">
           <input type="text" name="search" id="search" class="border-2 border-black w-3/5 px-1 focus:outline-none focus:border-blue-600 md:w-3/4" placeholder="Votre recherche...">
           <button type="submit" class="border-2 border-blue-900 w-2/5 bg-blue-600 text-white md:w-1/4">Rechercher !</button>
         </form>
