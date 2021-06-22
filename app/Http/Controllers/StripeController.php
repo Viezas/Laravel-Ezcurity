@@ -11,7 +11,7 @@ class StripeController extends Controller
 {
     public function billingGate()
     {
-        return response()->json(Auth::user()->billingPortalUrl('http://localhost:8080/') ,200);
+        return response()->json(Auth::user()->billingPortalUrl('https://ezcurityapp.web.app/') ,200);
     }
 
     public function showPlan(int $id)
