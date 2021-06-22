@@ -30,7 +30,7 @@ class SubscribeController extends Controller
         }
     }
 
-    public function subscribe(subscribeRequest $request, $id)
+    public function subscribe(subscribeRequest $request, int $id)
     {
         try {
             $service = Abonnement::where('id', $id)->get();

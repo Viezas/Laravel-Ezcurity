@@ -39,3 +39,7 @@ Route::get('/plans/{category}', [ServicesController::class, 'apiServices'])->nam
 
 //BILLING GATE routes
 Route::middleware('auth:sanctum')->post('/billing', [StripeController::class, 'billingGate'])->name('api.billing');
+
+//STRIPE routes
+Route::middleware('auth:sanctum')->post('/stripe/plans/{id}', [StripeController::class, 'showPlan'])->name('api.stripe.showPlan');
+Route::middleware('auth:sanctum')->post('/stripe/subscribe/{id}', [StripeController::class, 'subscribe'])->name('api.stripe.subscribe');
